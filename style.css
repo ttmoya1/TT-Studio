@@ -1,3 +1,5 @@
+/* VARIABLES Y ESTILOS GENERALES */
+
 :root {
   --bg: #101016;
   --surface: #17171f;
@@ -71,7 +73,7 @@ p {
   margin-inline: auto;
 }
 
-/* Encabezado */
+/* ENCABEZADO */
 
 .header {
   height: 98px;
@@ -150,7 +152,7 @@ nav a:hover {
   display: none;
 }
 
-/* Banner principal */
+/* PORTADA */
 
 .hero {
   position: relative;
@@ -232,6 +234,8 @@ h1 span {
   margin-top: 31px;
 }
 
+/* BOTONES Y ENLACES */
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -269,6 +273,18 @@ h1 span {
 .text-link:hover {
   color: var(--accent);
 }
+
+.light {
+  background: #f1eafa;
+  color: #241832;
+  white-space: nowrap;
+}
+
+.light:hover {
+  background: #fff;
+}
+
+/* DETALLES DE LA PORTADA */
 
 .hero-notes {
   display: flex;
@@ -325,7 +341,7 @@ h1 span {
   margin-left: 18px;
 }
 
-/* Sobre mí */
+/* SECCIONES */
 
 .section {
   padding-block: 96px;
@@ -341,6 +357,21 @@ h2 {
   line-height: 1.18;
   letter-spacing: -1.4px;
 }
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 42px;
+}
+
+.section-heading > p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* SOBRE MÍ */
 
 .about {
   display: grid;
@@ -368,24 +399,11 @@ h2 {
   margin-top: 10px;
 }
 
-/* Servicios */
+/* SERVICIOS, PORTAFOLIO Y COTIZACIÓN */
 
 .services {
   background: #14141c;
   border-block: 1px solid var(--line);
-}
-
-.section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 30px;
-  margin-bottom: 42px;
-}
-
-.section-heading > p {
-  color: var(--muted);
-  font-size: 13px;
 }
 
 .cards {
@@ -444,7 +462,7 @@ h2 {
   color: #c9bdde;
 }
 
-/* Proceso */
+/* PROCESO */
 
 .steps {
   display: grid;
@@ -472,7 +490,7 @@ h2 {
   color: var(--muted);
 }
 
-/* Contacto */
+/* CONTACTO */
 
 .contact {
   border: 1px solid #b092ec44;
@@ -512,17 +530,19 @@ h2 {
   font-size: 13px;
 }
 
-.light {
-  background: #f1eafa;
-  color: #241832;
-  white-space: nowrap;
+.contact-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
 }
 
-.light:hover {
-  background: #fff;
+.contact-options .text-link {
+  overflow-wrap: anywhere;
 }
 
-/* Pie de página */
+/* PIE DE PÁGINA */
 
 footer {
   padding-block: 30px 40px;
@@ -549,6 +569,8 @@ footer > span {
   color: var(--accent);
 }
 
+/* ACCESIBILIDAD */
+
 .skip {
   position: fixed;
   top: -100px;
@@ -563,7 +585,7 @@ footer > span {
   top: 10px;
 }
 
-/* Pantallas grandes */
+/* PANTALLAS GRANDES */
 
 @media (min-width: 1500px) {
   .hero-photo {
@@ -573,7 +595,7 @@ footer > span {
   }
 }
 
-/* Tabletas */
+/* TABLETAS */
 
 @media (max-width: 900px) {
   nav {
@@ -607,7 +629,24 @@ footer > span {
   }
 }
 
-/* Celulares */
+/* NAVEGACIÓN EN PANTALLAS INTERMEDIAS */
+
+@media (min-width: 641px) and (max-width: 1050px) {
+  .header {
+    height: auto;
+    min-height: 98px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-block: 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+}
+
+/* CELULARES */
 
 @media (max-width: 640px) {
   html {
@@ -791,6 +830,10 @@ footer > span {
     gap: 28px;
   }
 
+  .contact-options {
+    width: 100%;
+  }
+
   .contact .button {
     width: 100%;
     gap: 10px;
@@ -805,7 +848,7 @@ footer > span {
   }
 }
 
-/* Accesibilidad */
+/* RESPETAR PREFERENCIA DE MOVIMIENTO REDUCIDO */
 
 @media (prefers-reduced-motion: reduce) {
   html {

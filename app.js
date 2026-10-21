@@ -4,6 +4,7 @@ document.documentElement.classList.add("js");
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
+// Actualiza el estado visual y accesible del menú.
 function setMenu(open) {
   menuBtn.setAttribute("aria-expanded", String(open));
 
@@ -15,9 +16,10 @@ function setMenu(open) {
   menu.classList.toggle("is-open", open);
 }
 
-// Abrir o cerrar el menú.
+// Abrir o cerrar al presionar el botón.
 menuBtn.addEventListener("click", () => {
   const isOpen = menuBtn.getAttribute("aria-expanded") === "true";
+
   setMenu(!isOpen);
 });
 
@@ -49,6 +51,8 @@ document.addEventListener("click", (event) => {
 });
 
 // Restablecer el menú al cambiar entre celular y escritorio.
-window.matchMedia("(min-width: 641px)").addEventListener("change", () => {
-  setMenu(false);
-});
+window
+  .matchMedia("(min-width: 641px)")
+  .addEventListener("change", () => {
+    setMenu(false);
+  });
