@@ -862,3 +862,65 @@ footer > span {
     animation: none !important;
   }
 }
+
+/* Botones de contacto */
+.contact-options {
+  width: 290px;
+  max-width: 100%;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.contact-options > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 54px;
+  padding: 16px 20px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  gap: 16px;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+/* Correo e Instagram */
+.contact-options > .text-link {
+  background: rgba(192, 163, 255, 0.06);
+  border-color: rgba(192, 163, 255, 0.25);
+  color: #eee7fa;
+}
+
+.contact-options > .text-link:hover {
+  background: rgba(192, 163, 255, 0.14);
+  border-color: rgba(192, 163, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Flechas alineadas a la derecha */
+.contact-options > a > span {
+  margin-left: 0;
+  flex-shrink: 0;
+}
+
+/* Celulares */
+@media (max-width: 640px) {
+  .contact-options {
+    width: 100%;
+  }
+
+  .contact-options > a {
+    padding: 16px;
+    font-size: 12px;
+  }
+}
