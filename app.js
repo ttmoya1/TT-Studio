@@ -1,33 +1,54 @@
+// La navegación y el contenido también funcionan sin JavaScript.
+document.documentElement.classList.add("js");
+
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
-const sections = document.querySelectorAll(".content");
-const home = document.getElementById("home");
-const items = document.querySelectorAll(".menu li");
 
-let open = false;
+function setMenu(open) {
+  menuBtn.setAttribute("aria-expanded", String(open));
 
+  menuBtn.setAttribute(
+    "aria-label",
+    open ? "Cerrar menú" : "Abrir menú"
+  );
+
+  menu.classList.toggle("is-open", open);
+}
+
+// Abrir o cerrar el menú.
 menuBtn.addEventListener("click", () => {
-    open = !open;
-    menu.style.left = open ? "0" : "-260px";
+  const isOpen = menuBtn.getAttribute("aria-expanded") === "true";
+  setMenu(!isOpen);
 });
 
-items.forEach(item => {
-    item.addEventListener("click", () => {
-        const sectionId = item.getAttribute("data-section");
+// Cerrar al seleccionar una sección.
+menu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    setMenu(false);
+  });
+});
 
-        // Oculta todo
-        sections.forEach(sec => sec.style.display = "none");
-        home.style.display = "none";
+// Cerrar con Escape y devolver el foco al botón.
+document.addEventListener("keydown", (event) => {
+  const isOpen = menuBtn.getAttribute("aria-expanded") === "true";
 
-        // Si es inicio, muestra home
-        if (sectionId === "home") {
-            home.style.display = "flex";
-        } else {
-            document.getElementById(sectionId).style.display = "block";
-        }
+  if (event.key === "Escape" && isOpen) {
+    setMenu(false);
+    menuBtn.focus();
+  }
+});
 
-        // Cierra menú
-        menu.style.left = "-260px";
-        open = false;
-    });
+// Cerrar al hacer clic fuera del menú.
+document.addEventListener("click", (event) => {
+  if (
+    !menu.contains(event.target) &&
+    !menuBtn.contains(event.target)
+  ) {
+    setMenu(false);
+  }
+});
+
+// Restablecer el menú al cambiar entre celular y escritorio.
+window.matchMedia("(min-width: 641px)").addEventListener("change", () => {
+  setMenu(false);
 });

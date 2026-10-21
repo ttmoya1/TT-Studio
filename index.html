@@ -1,141 +1,270 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>MW Studio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MW Studio. Diseño y desarrollo de páginas web para emprendedores y pequeños negocios.">
+  <meta name="theme-color" content="#101016">
+  <title>MW Studio — Tu negocio, al siguiente nivel</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip" href="#main">Saltar al contenido</a>
 
-    <!-- Botón menú -->
-    <div class="menu-btn" id="menuBtn">☰</div>
+  <header class="header">
+    <a class="brand" href="#home" aria-label="MW Studio, inicio">
+      <span class="monogram">mw<span>·</span></span>
+      <span class="brand-name">
+        MW STUDIO
+        <small>DISEÑO & DESARROLLO WEB</small>
+      </span>
+    </a>
 
-    <!-- Pantalla inicial -->
-    <div class="center" id="home">
-        <h1>MW Studio</h1>
-        <p>Creamos páginas web profesionales para negocios que necesitan
-           resultados rápidos y confiables. Nos enfocamos en un desarrollo
-           seguro, claro y eficiente, para que tu página transmita confianza,
-           muestre tus servicios y facilite el contacto con tus clientes.</p>
-    </div>
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-controls="menu"
+      aria-expanded="false"
+      aria-label="Abrir menú"
+    >
+      <span></span>
+      <span></span>
+    </button>
 
-    <!-- Menú lateral -->
-    <nav class="menu" id="menu">
-        <ul>
-            <li data-section="home">Inicio</li>
-            <li data-section="soy">Quién soy</li>
-            <li data-section="hago">Qué hago</li>
-            <li data-section="como">Cómo funciona</li>
-            <li data-section="contacto">Contacto</li>
-        </ul>
+    <nav id="menu" aria-label="Navegación principal">
+      <a href="#soy">Sobre mí</a>
+      <a href="#hago">Servicios</a>
+      <a href="#como">El proceso</a>
+      <a class="nav-contact" href="#contacto">
+        Hablemos <span aria-hidden="true">↗</span>
+      </a>
     </nav>
+  </header>
 
-    <!-- QUIÉN SOY -->
-    <section id="soy" class="content">
-        <div class="section-header">
-            <h2>Sobre mí</h2>
-            <p>Un poco de quién soy y qué me motiva</p>
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-photo" aria-hidden="true"></div>
+
+      <div class="hero-inner wrap">
+        <p class="eyebrow">
+          <span class="dot"></span>
+          DISEÑO CON PROPÓSITO. DESARROLLO CON CUIDADO.
+        </p>
+
+        <h1 id="hero-title">
+          Tu negocio merece<br>
+          una web que<br>
+          <span>esté a su altura.</span>
+        </h1>
+
+        <p class="hero-description">
+          Transformo tu idea en una presencia digital clara,
+          profesional y fácil de usar. Para que tus clientes
+          te encuentren y den el siguiente paso.
+        </p>
+
+        <div class="actions">
+          <a
+            class="button primary"
+            href="https://wa.me/50687279121"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hablemos de tu proyecto
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a class="text-link" href="#hago">
+            Explorar servicios
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div class="hero-notes">
+          <span>Diseño adaptable</span>
+          <span>Atención personalizada</span>
+          <span>Contacto directo</span>
+        </div>
+      </div>
+
+      <div class="image-label" aria-hidden="true">
+        <span>MW / DIGITAL STUDIO</span>
+        <p>Buenas ideas.<br>Mejores experiencias.</p>
+      </div>
+
+      <div class="hero-bottom wrap">
+        <span>HECHO CON CUIDADO, DESDE COSTA RICA</span>
+        <a href="#soy">
+          Conocé el estudio
+          <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="about wrap section" id="soy">
+      <div>
+        <p class="eyebrow muted">01 / EL ESTUDIO</p>
+        <h2>Detrás de cada web,<br>hay una conversación.</h2>
+      </div>
+
+      <div class="about-copy">
+        <p>
+          Soy <strong>Gustavo Moya</strong>, estudiante de Ingeniería
+          en Sistemas y la persona detrás de MW Studio.
+        </p>
+        <p>
+          Ayudo a emprendedores y pequeños negocios a tener presencia
+          en Internet sin complicaciones. Escucho tu idea y la convierto
+          en una página que explique lo que hacés y facilite conectar
+          con tus clientes.
+        </p>
+        <a class="text-link" href="#contacto">
+          Conversemos sobre tu idea
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="services section" id="hago">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow muted">
+              02 / LO QUE PUEDO HACER POR VOS
+            </p>
+            <h2>Lo esencial, bien hecho.</h2>
+          </div>
+          <p>
+            Una web pensada para tu negocio.<br>
+            Y para las personas que lo eligen.
+          </p>
         </div>
 
         <div class="cards">
-            <div class="card">
-                <h3>👨‍💻 ¿Quién soy?</h3>
-                <p>
-                    Mi nombre es Gustavo Moya, estudiante de 3 año de Ingeniería en Sistemas,
-                    enfocado en crear páginas web claras y funcionales.
-                </p>
-            </div>
+          <article class="card">
+            <span class="service-icon" aria-hidden="true">&lt;/&gt;</span>
+            <span class="card-number">01</span>
+            <h3>Páginas con identidad</h3>
+            <p>
+              Sitios informativos e interactivos que presentan tus
+              servicios y transmiten la esencia de tu negocio.
+            </p>
+            <span class="card-tag">DISEÑO + DESARROLLO</span>
+          </article>
 
-            <div class="card">
-                <h3>🎯 Mi objetivo</h3>
-                <p>
-                    Ayudar a emprendedores y pequeños negocios
-                    a tener presencia en Internet sin complicaciones.
-                </p>
-            </div>
+          <article class="card">
+            <span class="service-icon" aria-hidden="true">▣</span>
+            <span class="card-number">02</span>
+            <h3>En cualquier pantalla</h3>
+            <p>
+              Una experiencia clara y cómoda, desde el celular de tus
+              clientes hasta la pantalla de una computadora.
+            </p>
+            <span class="card-tag">DISEÑO ADAPTABLE</span>
+          </article>
+
+          <article class="card">
+            <span class="service-icon" aria-hidden="true">↗</span>
+            <span class="card-number">03</span>
+            <h3>Más cerca de tus clientes</h3>
+            <p>
+              WhatsApp y redes sociales integrados para que pasar de
+              una visita a una conversación sea sencillo.
+            </p>
+            <span class="card-tag">CONTACTO DIRECTO</span>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- QUÉ HAGO -->
-    <section id="hago" class="content">
-        <div class="section-header">
-            <h2>¿Qué hago?</h2>
-            <p>Soluciones digitales para cualquier tipo de negocio</p>
+    <section class="section wrap" id="como">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow muted">03 / PASO A PASO</p>
+          <h2>Tu idea. Un proceso claro.</h2>
         </div>
+        <p>
+          Trabajamos juntos en cada etapa.<br>
+          Sin enredos, con comunicación directa.
+        </p>
+      </div>
 
-        <div class="cards">
-            <div class="card">
-                <h3>🌐 Páginas web</h3>
-                <p>Páginas informativas e interactivas para cualquier tipo de negocio.</p>
-            </div>
+      <div class="steps">
+        <article>
+          <span>01</span>
+          <h3>Conversamos</h3>
+          <p>
+            Me contás tu idea, tus objetivos y lo que necesita tu negocio.
+          </p>
+        </article>
 
-            <div class="card">
-                <h3>📱 Diseño adaptable</h3>
-                <p>Tu web se verá perfecta en celular y computadora.</p>
-            </div>
+        <article>
+          <span>02</span>
+          <h3>Diseñamos</h3>
+          <p>
+            Preparo una propuesta visual que dé forma a lo que imaginás.
+          </p>
+        </article>
 
-            <div class="card">
-                <h3>💬 Contacto directo</h3>
-                <p>Integración con WhatsApp y redes sociales.</p>
-            </div>
-        </div>
+        <article>
+          <span>03</span>
+          <h3>Desarrollamos</h3>
+          <p>
+            Construyo tu página y revisamos juntos los detalles.
+          </p>
+        </article>
+
+        <article>
+          <span>04</span>
+          <h3>Entregamos</h3>
+          <p>
+            Tu web queda lista para presentar tu negocio al mundo.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <!-- CÓMO FUNCIONA -->
-    <section id="como" class="content">
-        <div class="section-header">
-            <h2>¿Cómo funciona?</h2>
-            <p>Un proceso simple y claro</p>
-        </div>
+    <section class="contact wrap" id="contacto">
+      <div>
+        <p class="eyebrow">04 / EMPECEMOS ALGO BUENO</p>
+        <h2>
+          Tu próxima etapa<br>
+          empieza con un <em>hola.</em>
+        </h2>
+        <p>Contame qué tenés en mente. Le damos forma juntos.</p>
+      </div>
 
-        <div class="cards">
-            <div class="card">
-                <h3>1️⃣ Conversamos</h3>
-                <p>Me cuentas tu idea y lo que necesita tu negocio.</p>
-            </div>
-
-            <div class="card">
-                <h3>2️⃣ Diseño</h3>
-                <p>Creo una propuesta clara y sencilla.</p>
-            </div>
-
-            <div class="card">
-                <h3>3️⃣ Desarrollo</h3>
-                <p>Construyo la página y la ajustamos juntos.</p>
-            </div>
-
-            <div class="card">
-                <h3>4️⃣ Entrega</h3>
-                <p>Tu web queda lista para usar.</p>
-            </div>
-        </div>
+      <a
+        class="button light"
+        href="https://wa.me/50687279121"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Escribime por WhatsApp
+        <span aria-hidden="true">↗</span>
+      </a>
     </section>
+  </main>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="content">
-        <div class="section-header">
-            <h2>Contacto</h2>
-            <p>Hablemos sobre tu proyecto</p>
-        </div>
+  <footer class="wrap">
+    <a class="footer-brand" href="#home">
+      MW Studio<span>·</span>
+    </a>
 
-        <div class="cards">
-            <div class="card">
-                <h3> WhatsApp</h3>
-                <p>Respuesta rápida y directa</p>
-                <a href="https://wa.me/50687279121" target="_blank" class="btn whatsapp">
-                    Escribir por WhatsApp
-                </a>
-            </div>
+    <p>Diseño y desarrollo web · Costa Rica</p>
 
-            <div class="card">
-                <h3> Instagram</h3>
-                <p>Seguinos en Nuestro Instagram</p>
-                <button class="btn disabled">Próximamente</button>
-            </div>
-        </div>
-    </section>
+    <a
+      class="text-link"
+      href="https://www.instagram.com/ttmoya1/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visitar Instagram de ttmoya1 (abre en otra pestaña)"
+    >
+      Instagram · @ttmoya1
+      <span aria-hidden="true">↗</span>
+    </a>
+  </footer>
 
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
